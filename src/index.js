@@ -10,7 +10,7 @@ import reducers from './reducers'
 import App from './components/App'
 import List from './components/List'
 import Create from './components/Create'
-import Authenticate from './components/Authenticate'
+import Contract from './components/Contract'
 
 const reduxRouterMiddleware = syncHistory(browserHistory)
 const createStoreWithMiddleware = applyMiddleware(reduxRouterMiddleware, thunkMiddleware)(createStore)
@@ -24,7 +24,7 @@ render((
 
         <Route path="/list" component={List}/>
         <Route path="/create" component={Create}/>
-        <Route path='/authenticate' component={Authenticate}/>
+        <Route path='/contract' component={Contract}/>
       </Route>
     </Router>
   </Provider>

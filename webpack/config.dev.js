@@ -32,7 +32,13 @@ module.exports = {
         test: /\.js$/,
         loaders: ['babel'],
         include: path.join(__dirname, '..', 'src')
-      }
+      },
+        { test: /\.css/, loader: "style-loader!css-loader" },
+        { test: /\.png/, loader: "url-loader?limit=100000&mimetype=image/png" },
+        { test: /\.woff/, loader: "url-loader?limit=100000"},
+        { test: /\.woff2/, loader: "url-loader?limit=100000"},
+        { test: /\.ttf/, loader: "file-loader"},
+        { test: /\.eot/, loader: "file-loader"}
     ]
   }
 }
