@@ -21,6 +21,7 @@ export class Comment extends Component {
     componentWillReceiveProps (nextProps) {
         if (nextProps.clipboard === true) {
             this.textInput.focus();
+            this.props.dispatch(hideTooltip());
         }
     }
 
