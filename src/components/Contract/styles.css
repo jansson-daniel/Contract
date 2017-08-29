@@ -4,4 +4,12 @@ body {
 
 .contract {
     padding: 25px;
+    width: 70%;
+    float: left;
+}
+
+.company {
+    width: 24%;
+    float: left;
+    margin-top: 25px;
 }

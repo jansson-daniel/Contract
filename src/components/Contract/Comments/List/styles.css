@@ -1,0 +1,8 @@
+.list {
+    padding: 0;
+    margin: 20px 0;
+    list-style: none;
+    font-size: 1.2em;
+    font-family: 'sans-serif';
+    color: #444444;
+}

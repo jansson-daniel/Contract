@@ -12,53 +12,31 @@ export class Agreement extends Component {
             selection: null
         };
 
-        this.highlight = this.highlight.bind(this);
-        this.makeClick = this.makeClick.bind(this);
-        this.zss_editor = {};
+        this.saveSelection = this.saveSelection.bind(this);
+        this.highlightSelection = this.highlightSelection.bind(this);
     }
 
     componentWillReceiveProps (nextProps) {
-        //const agreement = document.querySelector('.agreement');
-       //console.log(window.getSelection())
-        //this.setSelectionRange (agreement, nextProps.selection.baseOffset, nextProps.selection.focusOffset);
+        // const agreement = document.querySelector('.agreement');
+        // console.log(window.getSelection())
+        // this.setSelectionRange (agreement, nextProps.selection.baseOffset, nextProps.selection.focusOffset);
 
     }
 
-    makeEditableAndHighlight(colour) {
-        var sel = window.getSelection();
-        this.setState({ selection: sel })
-        if (sel.rangeCount && sel.getRangeAt) {
-            var range = sel.getRangeAt(0);
-        }
-        document.designMode = "on";
-
-        if (range) {
-            sel.removeAllRanges();
-            sel.addRange(range);
-        }
-
-        if (!document.execCommand("HiliteColor", false, colour)) {
-            document.execCommand("BackColor", false, colour);
-        }
-
-        document.designMode = "off";
-    }
-
-    makeClick () {
-        var selection = window.getSelection();
+    highlightSelection () {
+        const selection = window.getSelection();
         selection.removeAllRanges();
         selection.addRange(this.state.range);
-        //console.log('here', this.zss_editor.currentSelection);
-        document.execCommand("HiliteColor", false, '#222')
     }
 
-    highlight(colour) {
-        var selection = window.getSelection();
-        var range = selection.getRangeAt(0);
+    saveSelection () {
+        const selection = window.getSelection();
+        const  range = selection.getRangeAt(0);
 
         if (range.startOffset !== range.endOffset) {
-            this.setState({ range: selection.getRangeAt(0).cloneRange() })
-            this.zss_editor.currentSelection = selection.getRangeAt(0).cloneRange();
+            const range = selection.getRangeAt(0).cloneRange();
+            this.props.dispatch(saveSelection(range));
+            this.setState({ range });
         }
     }
 
@@ -66,7 +44,7 @@ export class Agreement extends Component {
         return (
             <div>
                 <section className="agreement"
-                         onMouseUp={this.highlight}>
+                         onMouseUp={this.saveSelection}>
                     <h1 className='headline'>Offer terms</h1>
                     <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque eu eros in gravida.
                         Aliquam sit amet ultrices nibh, ut volutpat ipsum. Ut pulvinar varius bibendum. Mauris euismod,
@@ -90,7 +68,7 @@ export class Agreement extends Component {
                     <div className="audit-trail">
                         <h2 className="sub-heading">Audit trail</h2>
                         <div className="content">
-                            <span onClick={this.makeClick} className="opener">Click to view audit trail</span>
+                            <span onClick={this.highlightSelection} className="opener">Click to view audit trail</span>
                         </div>
                     </div>
                 </section>

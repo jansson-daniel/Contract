@@ -1,0 +1,175 @@
+.corporation {
+    padding: 25px 10px 25px 15px;
+    min-height: 1055px;
+}
+
+.logotype {
+    width: 160px;
+}
+
+.name {
+    display: block;
+    font-size: 1.6em;
+    color: #444444;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+}
+
+.reg-no {
+    display: block;
+    margin-top: 3px;
+    margin-bottom: 1.8em;
+    font-size: .9em;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+    color: #888;
+    font-style: italic;
+
+}
+
+.contact {
+    display: block;
+    font-size: 1em;
+    color: #444444;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+}
+
+.role {
+    display: block;
+    margin-top: 3px;
+    font-size: .9em;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+    color: #888;
+    font-style: italic;
+}
+
+.signatory {
+    display: block;
+    margin-top: 3px;
+    margin-bottom: 20px;
+    font-size: .9em;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+    color: #888;
+}
+
+.add-wrapper {
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.add-icon {
+    color: #5a87c8;
+    margin-right: 8px;
+    float: left;
+}
+
+.tag-icon {
+    color: #999999;
+    margin-right: 7px;
+}
+
+.add-participant {
+    float: left;
+    margin-top: -1px;
+    color: #5a87c8;
+    font-size: 0.9em;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+}
+
+.client-box {
+    margin-top: 2em;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+.sign-box {
+    margin-top: 2em;
+}
+
+.sign-button {
+    background: #66b06b;
+    border: 1px solid #539973;
+    border-radius: 3px;
+    color: #ffffff;
+    padding: 12px 15px 15px 15px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 1em;
+}
+
+.sign-button img {
+    width: 20px;
+    margin-left: 79px;
+    float: left;
+}
+
+.sign-button span {
+    margin-left: -74px;
+}
+
+.winner {
+    display: block;
+    margin-bottom: 30px;
+    font-size: .9em;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+    color: #444444;
+}
+
+.valid {
+    display: block;
+    margin-bottom: 30px;
+    font-size: .9em;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+    color: #444444;
+}
+
+.valid span {
+    text-decoration: underline;
+}
+
+.download {
+    color: #5a87c8;
+    font-size: .9em;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+}
+
+.tag {
+    color: #444444;
+    font-size: .9em;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+}
+
+.imported-wrapper {
+    border-radius: 20px;
+    background-color: #888888;
+    width: 100px;
+    color: #ffffff;
+    overflow: hidden;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+.imported-wrapper span {
+    color: #ffffff;
+    float: left;
+    margin-left: 10px;
+    margin-top: -1px;
+}
+
+.imported-wrapper i {
+    float: right;
+    margin-right: 5px;
+    margin-top: -1px;
+}
+
+.add-tag {
+    float: left;
+    color: #08A7C8;
+    font-size: 0.9em;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+}
+
+.add-tag-icon {
+    color: #08A7C8;
+    margin-right: 8px;
+    float: left;
+    font-weight: 700;
+}

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Agreement from './Agreement';
 import Comments from './Comments';
+import Corporation from './Corporation';
 import styles from './styles.css';
 
 export class Contract extends Component {
@@ -15,9 +16,14 @@ export class Contract extends Component {
         console.log(styles);
 
         return (
-            <div className='contract'>
-                <Agreement />
-                <Comments />
+            <div>
+                <div className='contract'>
+                    <Agreement />
+                    <Comments />
+                </div>
+                <div className="company">
+                    <Corporation />
+                </div>
             </div>
         )
     }
