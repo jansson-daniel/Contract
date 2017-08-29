@@ -6,24 +6,24 @@
     cursor: pointer
 }
 
-.sender-receiver {
+.list-item .sender-receiver {
     font-size: 14px;
 }
 
-.sender,
-.receiver {
+.list-item .sender,
+.list-item .receiver {
     margin-left: 5px;
     margin-right: 5px;
     background-color: #eeeeee;
     padding: 3px;
 }
 
-.subject {
+.list-item .subject {
     font-weight: bold;
     color: #555555;
 }
 
-.timestamp {
+.list-item .timestamp {
     margin-left: 20px;
     border-bottom: 2px dotted #aaa;
 }

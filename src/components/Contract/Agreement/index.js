@@ -47,7 +47,7 @@ export class Agreement extends Component {
                          onMouseDown={this.handleMouseDown}
                          onMouseUp={this.saveSelection}>
                     <h1 className='headline'>Offer terms</h1>
-                    <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque eu eros in gravida.
+                    <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque.
                         Aliquam sit amet ultrices nibh, ut volutpat ipsum. Ut pulvinar varius bibendum. Mauris euismod,
                         enim quis accumsan gravida, tortor leo vulputate dolor, in aliquet eros ipsum in justo. Curabitur
                         consectetur risus et aliquet finibus. In porttitor cursus sem a iaculis. Curabitur tempus erat vel
@@ -70,6 +70,7 @@ export class Agreement extends Component {
                         <h2 className="sub-heading">Audit trail</h2>
                         <div className="content">
                             <span className="opener">Click to view audit trail</span>
+                            <i className="fa fa-chevron-down open-arrow" />
                         </div>
                     </div>
                 </section>

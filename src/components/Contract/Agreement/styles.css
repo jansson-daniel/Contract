@@ -5,7 +5,7 @@
     margin-bottom: 20px;
 }
 
-.headline {
+.agreement .headline {
     text-align: center;
     font-family: 'Arial', 'Helvetica', 'sans-serif';
     font-size: 2.3em;
@@ -13,32 +13,39 @@
     margin-top: 60px;
 }
 
-.sub-heading {
+.agreement .sub-heading {
     font-family: 'Arial', 'Helvetica', 'sans-serif';
     font-size: 1.5em;
     font-weight: 100;
 }
 
-.paragraph {
+.agreement .paragraph {
     font-family: 'Arial', 'Helvetica', 'sans-serif';
     line-height: 1.5em;
     margin-bottom: 25px;
     color: #444444;
 }
 
-.audit-trail {
+.agreement .audit-trail {
     margin: 70px 0 30px 0;
 }
 
-.audit-trail .content {
+.agreement .audit-trail .content {
+    text-align: center;
     background-color: #efefef;
     border: 1px solid #cccccc;
     border-radius: 3px;
     min-height: 50px;
 }
 
-.audit-trail .opener {
-    display: block;
+.agreement .open-arrow {
+    display: inline-block;
+    margin-left: 8px;
+    color: #888888;
+}
+
+.agreement .audit-trail .opener {
+    display: inline-block;
     text-align: center;
     line-height: 2.5em;
     font-family: 'Arial', 'Helvetica', 'sans-serif';

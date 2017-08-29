@@ -10,7 +10,7 @@
     position: relative;
 }
 
-.text-area {
+.comment .text-area {
     border: 1px solid #dddddd;
     border-radius: 3px;
     box-shadow: inset 0 0 1px 1px #eeeeee;
@@ -25,7 +25,7 @@
     resize: none;
 }
 
-.textarea-header {
+.comment .textarea-header {
     height: 42px;
     width: 100%;
     background-color: #eee;
@@ -34,6 +34,12 @@
     left: 0;
     top: 0;
     box-sizing: border-box;
+}
+
+.comment .sub-heading {
+    font-family: 'Arial', 'Helvetica', 'sans-serif';
+    font-size: 1.5em;
+    font-weight: 100;
 }
 
 .comment .send-to {

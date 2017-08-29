@@ -8,8 +8,6 @@ import thunkMiddleware from 'redux-thunk'
 
 import reducers from './reducers'
 import App from './components/App'
-import List from './components/List'
-import Create from './components/Create'
 import Contract from './components/Contract'
 
 const reduxRouterMiddleware = syncHistory(browserHistory)
@@ -20,11 +18,8 @@ render((
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <IndexRedirect to='/list'/>
-
-        <Route path="/list" component={List}/>
-        <Route path="/create" component={Create}/>
-        <Route path='/contract' component={Contract}/>
+        <IndexRedirect to='/contract'/>
+          <Route path='/contract' component={Contract}/>
       </Route>
     </Router>
   </Provider>

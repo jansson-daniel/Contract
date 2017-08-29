@@ -1,6 +1,6 @@
 export const addComment = (comment) => (dispatch) => {
     dispatch({
-        type: 'ADD',
+        type: 'ADD_COMMENT',
         payload: comment
     })
 };
