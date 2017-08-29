@@ -1,5 +1,6 @@
 .tooltip-wrapper {
     position: absolute;
+    cursor: pointer;
 }
 
 .tooltip {

@@ -4,3 +4,10 @@ export const copyToClipboard = (bool) => (dispatch) => {
         payload: bool
     })
 };
+
+export const hideTooltip = () => (dispatch) => {
+    dispatch({
+        type: 'HIDE_TOOLTIP',
+        payload: null
+    })
+};

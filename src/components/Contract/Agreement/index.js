@@ -32,7 +32,7 @@ export class Agreement extends Component {
         this.props.dispatch(copyToClipboard(false));
     }
 
-    saveSelection (event) {
+    saveSelection () {
         const selection = window.getSelection();
         const  range = selection.getRangeAt(0);
 
@@ -47,7 +47,10 @@ export class Agreement extends Component {
 
     handleMouseDown (event) {
         const position = { x: event.pageX, y: event.pageY };
-        this.props.dispatch(savePosition(position));
+
+        if (event.pageX !== event.pageY) {
+            this.props.dispatch(savePosition(position));
+        }
 
     }
 

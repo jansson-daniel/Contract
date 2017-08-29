@@ -20,6 +20,12 @@ export default handleActions({
             ...state,
             clipboard: action.payload
         }
+    },
+    HIDE_TOOLTIP: (state, action) => {
+        return {
+            ...state,
+            showTooltip: false
+        }
     }
 }, {
     selection: {},

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
 import { addComment } from '../../../actions/comments';
+import { hideTooltip } from '../../../actions/tooltip';
 import List from './List';
 import styles from './styles.css';
 
@@ -14,6 +15,7 @@ export class Comment extends Component {
 
         this.handlePost = this.handlePost.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleFocus = this.handleFocus.bind(this);
     }
 
     componentWillReceiveProps (nextProps) {
@@ -24,6 +26,10 @@ export class Comment extends Component {
 
     handleChange (event) {
         this.setState({ value: event.target.value });
+    }
+
+    handleFocus () {
+        this.props.dispatch(hideTooltip());
     }
 
     handlePost (event) {
@@ -44,7 +50,13 @@ export class Comment extends Component {
             <section className="comment">
                 <h2 className="sub-heading">Comments</h2>
                 <form action="#">
-                    <textarea ref={(input) => { this.textInput = input; }} onChange={this.handleChange} className="text-area" value={this.state.value} />
+                    <textarea
+                        ref={(input) => { this.textInput = input; }}
+                        onFocus={this.handleFocus}
+                        onChange={this.handleChange}
+                        className="text-area"
+                        value={this.state.value}
+                    />
                     <button className="post-button" onClick={this.handlePost}>Post Comment</button>
                 </form>
                 <List />
