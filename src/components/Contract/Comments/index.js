@@ -16,7 +16,11 @@ export class Comment extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    componentWillReceiveProps () {
+    componentWillReceiveProps (nextProps) {
+        console.log(nextProps.clipboard)
+        if (nextProps.clipboard === true) {
+            this.textInput.focus();
+        }
     }
 
     handleChange (event) {
@@ -33,10 +37,6 @@ export class Comment extends Component {
 
         this.setState({ value: '' });
         this.props.dispatch(addComment(comment));
-        //const selection = window.getSelection();
-        //selection.removeAllRanges();
-        //selection.addRange(this.props.selection);
-        console.log(this.props.selection);
     }
 
     render () {
@@ -44,7 +44,7 @@ export class Comment extends Component {
             <section className="comment">
                 <h2 className="sub-heading">Comments</h2>
                 <form action="#">
-                    <textarea onChange={this.handleChange} className="text-area" value={this.state.value} />
+                    <textarea ref={(input) => { this.textInput = input; }} onChange={this.handleChange} className="text-area" value={this.state.value} />
                     <button className="post-button" onClick={this.handlePost}>Post Comment</button>
                 </form>
                 <List />
@@ -60,7 +60,8 @@ Comment.propTypes = {
 
 function mapStateToProps (state) {
     return {
-        selection: state.agreement.selection
+        selection: state.agreement.selection,
+        clipboard: state.agreement.clipboard
     }
 }
 

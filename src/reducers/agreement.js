@@ -6,7 +6,14 @@ export default handleActions({
             ...state,
             selection: action.payload
         }
+    },
+    COPY_TO_CLIPBOARD: (state, action) => {
+        return {
+            ...state,
+            clipboard: action.payload
+        }
     }
 }, {
-    selection: {}
+    selection: {},
+    clipboard: false
 })

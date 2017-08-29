@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
 import { saveSelection } from '../../../actions/agreement';
+import { copyToClipboard } from '../../../actions/tooltip';
 import Tooltip from '../Tooltip';
 import styles from './styles.css';
 
@@ -27,11 +28,14 @@ export class Agreement extends Component {
         const selection = window.getSelection();
         selection.removeAllRanges();
         selection.addRange(this.state.range);
+        this.props.dispatch(copyToClipboard(false));
     }
 
     saveSelection () {
         const selection = window.getSelection();
         const  range = selection.getRangeAt(0);
+
+        this.props.dispatch(copyToClipboard(false));
 
         if (range.startOffset !== range.endOffset) {
             const range = selection.getRangeAt(0).cloneRange();
@@ -72,6 +76,7 @@ export class Agreement extends Component {
                         </div>
                     </div>
                 </section>
+                <Tooltip />
             </div>
         )
     }

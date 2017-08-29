@@ -14,7 +14,6 @@ export class List extends Component {
     }
 
     render () {
-        console.log(this.props.comments)
         return (
             <ul className="list">
                 {this.props.comments.map((item, index) =>
