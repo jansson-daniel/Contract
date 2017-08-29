@@ -7,8 +7,8 @@ import base from './base'
 import auth from './api/auth'
 import items from './api/items'
 
-mongoose.connect(config.get('database.host'))
-mongoose.connection.on('error', console.error.bind(console, 'db error:'))
+//mongoose.connect(config.get('database.host'))
+//mongoose.connection.on('error', console.error.bind(console, 'db error:'))
 
 const server = new Hapi.Server({
   connections: {
