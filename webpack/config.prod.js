@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
     entry: [
         'babel-polyfill',
-        './client/index'
+        './src/index'
     ],
     output: {
         path: path.join(__dirname, '..', 'dist', 'client', 'static'),
