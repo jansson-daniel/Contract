@@ -11,22 +11,19 @@ import items from './api/items'
 //mongoose.connection.on('error', console.error.bind(console, 'db error:'))
 
 const server = new Hapi.Server({
-  connections: {
-    routes: {
-      files: {
-        relativeTo: Path.join(Path.dirname(__dirname), 'dist')
-      }
+    connections: {
+        routes: {
+            files: {
+                relativeTo: Path.join(Path.dirname(__dirname), 'dist')
+            }
+        }
     }
-  }
 })
 
 server.connection({
-    host: process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost',
-    port: +process.env.PORT || 8080,
-    routes: {
-        cors: true
-    }
-});
+    host: 'localhost',
+    port: process.env.PORT || 8000
+})
 
 if (process.env.NODE_ENV === 'development') {
   const webpack = require('webpack')
