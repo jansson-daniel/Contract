@@ -60,4 +60,5 @@
     "react-burger-menu": "*",
     "react-checkbox": "*",
     "rc-checkbox": ""
-  };
+  }
+}
