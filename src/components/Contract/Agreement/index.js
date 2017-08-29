@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
 import {savePosition, saveSelection} from '../../../actions/agreement';
-import { copyToClipboard } from '../../../actions/tooltip';
+import {copyToClipboard, hideTooltip} from '../../../actions/tooltip';
 import Tooltip from '../Tooltip';
 import styles from './styles.css';
 
@@ -14,29 +14,12 @@ export class Agreement extends Component {
         };
 
         this.saveSelection = this.saveSelection.bind(this);
-        this.highlightSelection = this.highlightSelection.bind(this);
         this.handleMouseDown = this.handleMouseDown.bind(this);
-    }
-
-    componentWillReceiveProps (nextProps) {
-        // const agreement = document.querySelector('.agreement');
-        // console.log(window.getSelection())
-        // this.setSelectionRange (agreement, nextProps.selection.baseOffset, nextProps.selection.focusOffset);
-
-    }
-
-    highlightSelection () {
-        const selection = window.getSelection();
-        selection.removeAllRanges();
-        selection.addRange(this.state.range);
-        this.props.dispatch(copyToClipboard(false));
     }
 
     saveSelection () {
         const selection = window.getSelection();
         const  range = selection.getRangeAt(0);
-
-        this.props.dispatch(copyToClipboard(false));
 
         if (range.startOffset !== range.endOffset) {
             const range = selection.getRangeAt(0).cloneRange();
@@ -47,11 +30,14 @@ export class Agreement extends Component {
 
     handleMouseDown (event) {
         const position = { x: event.pageX, y: event.pageY };
+        this.props.dispatch(copyToClipboard(false));
 
-        if (event.pageX !== event.pageY) {
-            this.props.dispatch(savePosition(position));
-        }
-
+        setTimeout(() => {
+            const selection = window.getSelection();
+            selection.anchorOffset === selection.focusOffset
+                ? this.props.dispatch(hideTooltip())
+                : this.props.dispatch(savePosition(position));
+        }, 200)
     }
 
     render () {
@@ -83,7 +69,7 @@ export class Agreement extends Component {
                     <div className="audit-trail">
                         <h2 className="sub-heading">Audit trail</h2>
                         <div className="content">
-                            <span onClick={this.highlightSelection} className="opener">Click to view audit trail</span>
+                            <span className="opener">Click to view audit trail</span>
                         </div>
                     </div>
                 </section>
@@ -97,11 +83,9 @@ Agreement.propTypes = {
     dispatch: PropTypes.func
 };
 
-function mapStateToProps (state) {
-    return {
-        selection: state.agreement.selection,
-        position: state.agreement.position
-    }
-}
+const mapStateToProps = (state) => ({
+    selection: state.agreement.selection,
+    position: state.agreement.position
+});
 
 export default connect(mapStateToProps)(Agreement)

@@ -13,29 +13,29 @@ export class Corporation extends Component {
         return (
             <aside className='corporation'>
                 <img className="logotype" src="images/oneflow.png" />
-                <div className="client-box">
+                <div className="customer-info">
                     <span className="name">Oneflow AB</span>
                     <span className="reg-no">Reg. No. 5569032989</span>
                     <span className="contact">Peramanathan Satyamoorthy</span>
                     <span className="role">Developer</span>
                     <span className="signatory">Signatory</span>
-                    <div className="add-wrapper">
-                        <i className="fa fa-plus add-icon"></i>
+                    <div className="action-wrapper">
+                        <i className="fa fa-plus add-icon" />
                         <span className="add-participant">Add Collegue</span>
                     </div>
                 </div>
-                <div className="client-box">
+                <div className="customer-info">
                     <span className="name">Oneflow AB</span>
                     <span className="reg-no">Reg. No. 5569032989</span>
                     <span className="contact">Testing Ninja</span>
                     <span className="signatory">Signatory</span>
-                    <div className="add-wrapper">
+                    <div className="action-wrapper">
                         <i className="fa fa-plus add-icon" />
                         <span className="add-participant">Add participant</span>
                     </div>
                 </div>
                 <div className="sign-box">
-                    <div className="add-wrapper">
+                    <div className="action-wrapper">
                         <i className="fa fa-plus add-icon" />
                         <span className="add-participant">Add participant in another company</span>
                     </div>
@@ -43,16 +43,16 @@ export class Corporation extends Component {
                         <img src="images/checkmark.png" />
                         <span>Sign contract</span>
                     </button>
-                    <div className="add-wrapper">
+                    <div className="action-wrapper">
                         <i className="fa fa-share add-icon" />
                         <span className="add-participant">Delegate my signing rights</span>
                     </div>
                     <p className="valid">The offer is valid until <span>2017-09-21</span> (18 days left)</p>
-                    <div className="add-wrapper">
+                    <div className="action-wrapper">
                         <i className="fa fa-download add-icon" />
                         <span className="download">Download as PDF</span>
                     </div>
-                    <div className="add-wrapper">
+                    <div className="action-wrapper">
                         <i className="fa fa-tag tag-icon" />
                         <span className="tag">Tags</span>
                     </div>
@@ -60,7 +60,7 @@ export class Corporation extends Component {
                         <span className="tag">imported</span>
                         <i className="fa fa-times" />
                     </div>
-                    <div className="add-wrapper">
+                    <div className="action-wrapper">
                         <i className="fa fa-plus add-tag-icon" />
                         <span className="add-tag">Add Tag</span>
                     </div>
@@ -70,8 +70,6 @@ export class Corporation extends Component {
     }
 }
 
-Corporation.propTypes = {
-    dispatch: PropTypes.func
-};
+Corporation.propTypes = { dispatch: PropTypes.func };
 
 export default connect()(Corporation)

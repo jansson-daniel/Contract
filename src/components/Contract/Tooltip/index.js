@@ -32,13 +32,15 @@ export class Tooltip extends Component {
                 {(() => {
                     if (this.props.showTooltip === true) {
                         return (
-                            <div onClick={this.makeSelection} className="tooltip">
-                                <img className="edit" src="images/editicon.png" />
-                                <img className="speech-bubble" src="images/speachbubble.png" />
-                                <symbol className="twitter">
-                                    <img src="images/twitter.png" />
-                                </symbol>
-                                <img className="lock" src="images/lock.png" />
+                            <div>
+                                <div onClick={this.makeSelection} className="tooltip">
+                                    <img className="edit" src="images/editicon.png" />
+                                    <img className="speech-bubble" src="images/speachbubble.png" />
+                                    <symbol className="twitter">
+                                        <img src="images/twitter.png" />
+                                    </symbol>
+                                    <img className="lock" src="images/lock.png" />
+                                </div>
                             </div>
                         );
                     } else {
@@ -54,12 +56,10 @@ Tooltip.propTypes = {
     dispatch: PropTypes.func
 };
 
-function mapStateToProps (state) {
-    return {
-        selection: state.agreement.selection,
-        position: state.agreement.position,
-        showTooltip: state.agreement.showTooltip
-    }
-}
+const mapStateToProps = (state) => ({
+    selection: state.agreement.selection,
+    position: state.agreement.position,
+    showTooltip: state.agreement.showTooltip
+});
 
 export default connect(mapStateToProps)(Tooltip)

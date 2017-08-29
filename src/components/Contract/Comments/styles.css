@@ -6,16 +6,41 @@
     overflow: hidden;
 }
 
+.comment .form {
+    position: relative;
+}
+
 .text-area {
     border: 1px solid #dddddd;
     border-radius: 3px;
     box-shadow: inset 0 0 1px 1px #eeeeee;
     width: 100%;
-    height: 100px;
-    padding: 15px;
+    height: 180px;
+    padding: 51px 17px 10px 12px;
     box-sizing: border-box;
     font-size: 16px;
     font-family: 'Helvetica', 'Arial', 'sans-serif';
+    outline: none;
+    color: #666666;
+    resize: none;
+}
+
+.textarea-header {
+    height: 42px;
+    width: 100%;
+    background-color: #eee;
+    padding: 12px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+}
+
+.comment .send-to {
+    margin-right: 5px;
+    font-size: 16px;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+    color: #444444;
 }
 
 .comment .post-button {
@@ -28,4 +53,11 @@
     float: right;
     margin-top: 10px;
     cursor: pointer;
+    outline: none;
+}
+
+@media (max-width: 1000px) {
+    .comment {
+        margin-bottom: 0;
+    }
 }

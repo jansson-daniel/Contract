@@ -27,8 +27,6 @@ export class Contract extends Component {
     }
 }
 
-Contract.propTypes = {
-    dispatch: PropTypes.func
-};
+Contract.propTypes = { dispatch: PropTypes.func };
 
 export default connect()(Contract)

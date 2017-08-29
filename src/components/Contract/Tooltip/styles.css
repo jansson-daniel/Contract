@@ -6,8 +6,8 @@
 .tooltip {
     background: #31312f;
     border-radius: 8px;
-    width: 260px;
-    height: 48px;
+    width: 244px;
+    height: 40px;
     padding: 8px 0;
 }
 
@@ -24,9 +24,9 @@
 }
 
 .lock {
-    width: 40px;
+    width: 37px;
     float: right;
-    margin-top: 7px;
+    margin-top: 6px;
     margin-right: 21px;
 }
 
@@ -45,22 +45,22 @@
     content: '';
     position: absolute;
     left: 19px;
-    top: 8px;
+    top: 5px;
     border-left: 1px solid #bbbbbb;
     width: 2px;
     height: 32px;
 }
 
 .edit {
-    width: 24px;
+    width: 21px;
     float: left;
-    margin-top: 7px;
-    margin-left: 25px;
+    margin-top: 6px;
+    margin-left: 23px;
  }
 
 .speech-bubble {
-    width: 31px;
+    width: 27px;
     float: left;
-    margin-top: 8px;
-    margin-left: 21px;
+    margin-top: 7px;
+    margin-left: 18px;
 }

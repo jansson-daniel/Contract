@@ -27,14 +27,10 @@ export class List extends Component {
     }
 }
 
-List.propTypes = {
-    dispatch: PropTypes.func
-};
+List.propTypes = { dispatch: PropTypes.func };
 
-function mapStateToProps (state) {
-    return {
-        comments: state.comments.list
-    }
-}
+const mapStateToProps = (state) => ({
+    comments: state.comments.list
+});
 
 export default connect(mapStateToProps)(List)

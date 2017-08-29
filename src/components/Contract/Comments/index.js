@@ -35,6 +35,8 @@ export class Comment extends Component {
     handlePost (event) {
         event.preventDefault();
 
+        if (this.state.value.length === 0 || this.state.value === 'Write commente') return;
+
         const comment = {
             message: this.state.value,
             selectionRange: this.props.selection,
@@ -49,33 +51,35 @@ export class Comment extends Component {
         return (
             <section className="comment">
                 <h2 className="sub-heading">Comments</h2>
-                <form action="#">
+                <form className="form" action="#">
+                    <div className="textarea-header">
+                        <span className="send-to">Send to:</span>
+                        <select>
+                            <option value="Testing Ninja">Testing Ninja</option>
+                        </select>
+                    </div>
                     <textarea
                         ref={(input) => { this.textInput = input; }}
                         onFocus={this.handleFocus}
                         onChange={this.handleChange}
                         className="text-area"
+                        placeholder="Write a comment..."
                         value={this.state.value}
                     />
                     <button className="post-button" onClick={this.handlePost}>Post Comment</button>
                 </form>
                 <List />
-
             </section>
         )
     }
 }
 
-Comment.propTypes = {
-    dispatch: PropTypes.func
-};
+Comment.propTypes = { dispatch: PropTypes.func };
 
-function mapStateToProps (state) {
-    return {
-        selection: state.agreement.selection,
-        clipboard: state.agreement.clipboard,
-        position: state.agreement.position
-    }
-}
+const mapStateToProps = (state) => ({
+    selection: state.agreement.selection,
+    clipboard: state.agreement.clipboard,
+    position: state.agreement.position
+});
 
 export default connect(mapStateToProps)(Comment)

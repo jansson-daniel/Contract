@@ -6,10 +6,25 @@ body {
     padding: 25px;
     width: 70%;
     float: left;
+    box-sizing: border-box;
 }
 
 .company {
     width: 24%;
     float: left;
     margin-top: 25px;
+}
+
+@media (max-width: 1000px) {
+    .company {
+        width: 100%;
+        padding: 25px;
+        box-sizing: border-box;
+        margin-top: 0;
+    }
+
+    .contract {
+        width: 100%;
+        padding: 25px 25px 0 25px;
+    }
 }

@@ -5,3 +5,25 @@
     padding: 15px;
     cursor: pointer
 }
+
+.sender-receiver {
+    font-size: 14px;
+}
+
+.sender,
+.receiver {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #eeeeee;
+    padding: 3px;
+}
+
+.subject {
+    font-weight: bold;
+    color: #555555;
+}
+
+.timestamp {
+    margin-left: 20px;
+    border-bottom: 2px dotted #aaa;
+}
