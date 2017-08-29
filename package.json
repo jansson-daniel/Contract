@@ -8,7 +8,6 @@
     "mongo:start": "mongod --config /usr/local/etc/mongod.conf --fork --logpath /dev/null",
     "mongo:stop": "mongo admin --eval 'db.shutdownServer()' > /dev/null",
     "build": "webpack --config ./webpack/config.prod.js --progress --profile --colors",
-    //'build': "npm run build && NODE_ENV=production node index.js",
     "build:clean": "rimraf dist/client/static",
     "start": "npm run build:clean && NODE_ENV=development node index.js"
   },
