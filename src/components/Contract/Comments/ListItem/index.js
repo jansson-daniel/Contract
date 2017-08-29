@@ -15,6 +15,7 @@ export class ListItem extends Component {
         const selection = window.getSelection();
         selection.removeAllRanges();
         selection.addRange(this.props.comment.selectionRange);
+        window.scrollTo(this.props.comment.position.x, this.props.comment.position.y);
     }
 
     render () {

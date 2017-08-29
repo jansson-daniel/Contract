@@ -13,8 +13,6 @@ export class Contract extends Component {
     }
 
     render () {
-        console.log(styles);
-
         return (
             <div>
                 <div className='contract'>

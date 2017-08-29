@@ -4,3 +4,10 @@ export const saveSelection = (selection) => (dispatch) => {
         payload: selection
     })
 };
+
+export const savePosition = (position) => (dispatch) => {
+    dispatch({
+        type: 'SAVE_POSITION',
+        payload: position
+    })
+};

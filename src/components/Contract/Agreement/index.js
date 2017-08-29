@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
-import { saveSelection } from '../../../actions/agreement';
+import {savePosition, saveSelection} from '../../../actions/agreement';
 import { copyToClipboard } from '../../../actions/tooltip';
 import Tooltip from '../Tooltip';
 import styles from './styles.css';
@@ -15,6 +15,7 @@ export class Agreement extends Component {
 
         this.saveSelection = this.saveSelection.bind(this);
         this.highlightSelection = this.highlightSelection.bind(this);
+        this.handleMouseDown = this.handleMouseDown.bind(this);
     }
 
     componentWillReceiveProps (nextProps) {
@@ -31,7 +32,7 @@ export class Agreement extends Component {
         this.props.dispatch(copyToClipboard(false));
     }
 
-    saveSelection () {
+    saveSelection (event) {
         const selection = window.getSelection();
         const  range = selection.getRangeAt(0);
 
@@ -44,10 +45,17 @@ export class Agreement extends Component {
         }
     }
 
+    handleMouseDown (event) {
+        const position = { x: event.pageX, y: event.pageY };
+        this.props.dispatch(savePosition(position));
+
+    }
+
     render () {
         return (
             <div>
                 <section className="agreement"
+                         onMouseDown={this.handleMouseDown}
                          onMouseUp={this.saveSelection}>
                     <h1 className='headline'>Offer terms</h1>
                     <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque eu eros in gravida.
@@ -88,7 +96,8 @@ Agreement.propTypes = {
 
 function mapStateToProps (state) {
     return {
-        selection: state.agreement.selection
+        selection: state.agreement.selection,
+        position: state.agreement.position
     }
 }
 

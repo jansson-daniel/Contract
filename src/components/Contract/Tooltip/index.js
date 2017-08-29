@@ -17,6 +17,8 @@ export class Tooltip extends Component {
 
     componentWillReceiveProps (nextProps) {
         this.setState({ selection: nextProps.selection });
+        this.tooltip.style.left = nextProps.position.x -130 + 'px';
+        this.tooltip.style.top = nextProps.position.y -100 + 'px';
     }
 
     makeSelection () {
@@ -26,9 +28,9 @@ export class Tooltip extends Component {
 
     render () {
         return (
-            <div>
+            <div className="tooltip-wrapper" ref={(tooltip) => { this.tooltip = tooltip; }}>
                 {(() => {
-                    if (this.props.selection === this.state.selection) {
+                    if (this.props.showTooltip === true) {
                         return (
                             <div onClick={this.makeSelection} className="tooltip">
                                 <img className="edit" src="images/editicon.png" />
@@ -54,7 +56,9 @@ Tooltip.propTypes = {
 
 function mapStateToProps (state) {
     return {
-        selection: state.agreement.selection
+        selection: state.agreement.selection,
+        position: state.agreement.position,
+        showTooltip: state.agreement.showTooltip
     }
 }
 

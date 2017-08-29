@@ -17,7 +17,6 @@ export class Comment extends Component {
     }
 
     componentWillReceiveProps (nextProps) {
-        console.log(nextProps.clipboard)
         if (nextProps.clipboard === true) {
             this.textInput.focus();
         }
@@ -32,7 +31,8 @@ export class Comment extends Component {
 
         const comment = {
             message: this.state.value,
-            selectionRange: this.props.selection
+            selectionRange: this.props.selection,
+            position: this.props.position
         };
 
         this.setState({ value: '' });
@@ -61,7 +61,8 @@ Comment.propTypes = {
 function mapStateToProps (state) {
     return {
         selection: state.agreement.selection,
-        clipboard: state.agreement.clipboard
+        clipboard: state.agreement.clipboard,
+        position: state.agreement.position
     }
 }
 
