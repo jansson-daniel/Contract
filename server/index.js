@@ -18,12 +18,15 @@ const server = new Hapi.Server({
             }
         }
     }
-})
+});
 
 server.connection({
-    host: 'localhost',
-    port: process.env.PORT || 8000
-})
+    host: process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost',
+    port: +process.env.PORT || 8000,
+    routes: {
+        cors: true
+    }
+});
 
 if (process.env.NODE_ENV === 'development') {
   const webpack = require('webpack')

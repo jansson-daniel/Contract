@@ -37,7 +37,7 @@ module.exports = {
                 test: /\.js$/,
                 loaders: ['babel'],
                 include: [
-                    path.join(__dirname, '..', 'client'),
+                    path.join(__dirname, '..', 'src'),
                     path.join(__dirname, '..', 'server/config'),
                     path.join(__dirname, '..', 'helpers'),
                     path.join(__dirname, '..', 'validators')
