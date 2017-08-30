@@ -41,7 +41,8 @@ export class Comment extends Component {
         const comment = {
             message: this.state.value,
             selectionRange: this.props.selection,
-            position: this.props.position
+            position: this.props.position,
+            timestamp: Date.now()
         };
 
         this.setState({ value: '' });

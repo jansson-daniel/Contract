@@ -46,7 +46,7 @@ export class Agreement extends Component {
                     className="agreement"
                     onMouseDown={this.handleMouseDown}
                     onMouseUp={this.saveSelection}
-                    onChange={this.saveSelection}>
+                    onTouchEnd={this.saveSelection}>
 
                     <h1 className='headline'>Offer terms</h1>
                     <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque.

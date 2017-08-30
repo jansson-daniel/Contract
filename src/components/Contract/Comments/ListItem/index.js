@@ -7,9 +7,20 @@ export class ListItem extends Component {
     constructor (props) {
         super(props);
 
-        this.state = {};
+        this.state = {
+            timeLaps: 0
+        };
 
         this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentDidMount () {
+        this.setState({ timeLaps: Math.round((Date.now() - this.props.comment.timestamp) / 60000) });
+
+        setInterval(() => {
+            let timeLaps = this.state.timeLaps + 1;
+            this.setState({ timeLaps });
+        }, 60000);
     }
 
     handleClick () {
@@ -28,7 +39,7 @@ export class ListItem extends Component {
                 <p className="sender-receiver">From
                     <span className="sender">Peramanathan Sathyamoorthly</span> To
                     <span className="receiver">Testing Ninja</span>
-                    <span className="timestamp">27 minutes ago</span>
+                    <span className="timestamp">{this.state.timeLaps} minutes ago</span>
                 </p>
                 <p className="message">
                     <span className="subject">Subject: </span>
