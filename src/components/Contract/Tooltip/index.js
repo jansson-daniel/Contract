@@ -35,12 +35,12 @@ export class Tooltip extends Component {
                         return (
                             <div>
                                 <div onClick={this.makeSelection} className="tooltip">
-                                    <img className="edit" src="images/editicon.png" />
-                                    <img className="speech-bubble" src="images/speachbubble.png" />
+                                    <img className="edit" src="images/editicon.svg" />
+                                    <img className="speech-bubble" src="images/speachbubble.svg" />
                                     <symbol className="twitter">
-                                        <img src="images/twitter.png" />
+                                        <img src="images/twitter.svg" />
                                     </symbol>
-                                    <img className="lock" src="images/lock.png" />
+                                    <img className="lock" src="images/lock.svg" />
                                 </div>
                             </div>
                         );

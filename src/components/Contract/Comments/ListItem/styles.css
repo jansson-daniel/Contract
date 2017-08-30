@@ -1,4 +1,4 @@
-.list-item {
+.comment .list-item {
     font-size: 16px;
     font-family: 'Helvetica', 'Arial', 'sans-serif';
     color: #444444;
@@ -6,24 +6,24 @@
     cursor: pointer
 }
 
-.list-item .sender-receiver {
+.comment .list-item .sender-receiver {
     font-size: 14px;
 }
 
-.list-item .sender,
-.list-item .receiver {
+.comment .list-item .sender,
+.comment .list-item .receiver {
     margin-left: 5px;
     margin-right: 5px;
     background-color: #eeeeee;
     padding: 3px;
 }
 
-.list-item .subject {
+.comment .list-item .subject {
     font-weight: bold;
     color: #555555;
 }
 
-.list-item .timestamp {
+.comment .list-item .timestamp {
     margin-left: 20px;
     border-bottom: 2px dotted #aaa;
 }

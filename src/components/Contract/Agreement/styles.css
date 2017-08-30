@@ -1,16 +1,17 @@
 .agreement {
-    background-color: #ffffff;
-    padding: 30px;
-    box-shadow: 0 0 2px 2px #dddddd;
     margin-bottom: 20px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 0 2px 2px #dddddd;
 }
 
 .agreement .headline {
-    text-align: center;
+    margin-top: 60px;
     font-family: 'Arial', 'Helvetica', 'sans-serif';
     font-size: 2.3em;
     font-weight: 100;
-    margin-top: 60px;
+    text-align: center;
+
 }
 
 .agreement .sub-heading {
@@ -20,9 +21,9 @@
 }
 
 .agreement .paragraph {
+    margin-bottom: 25px;
     font-family: 'Arial', 'Helvetica', 'sans-serif';
     line-height: 1.5em;
-    margin-bottom: 25px;
     color: #444444;
 }
 
@@ -31,11 +32,12 @@
 }
 
 .agreement .audit-trail .content {
-    text-align: center;
-    background-color: #efefef;
+    min-height: 50px;
     border: 1px solid #cccccc;
     border-radius: 3px;
-    min-height: 50px;
+    background-color: #efefef;
+    text-align: center;
+
 }
 
 .agreement .open-arrow {
