@@ -54,7 +54,7 @@ export class Corporation extends Component {
                         <i className="fa fa-download add-icon" />
                         <span className="download">Download as PDF</span>
                     </div>
-                    <div className="action-wrapper">
+                    <div className="tag-wrapper">
                         <i className="fa fa-tag tag-icon" />
                         <span className="tag">Tags</span>
                     </div>

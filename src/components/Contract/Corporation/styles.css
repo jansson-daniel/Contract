@@ -50,6 +50,11 @@
     overflow: hidden;
 }
 
+.corporation .tag-wrapper {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
 .corporation .add-icon {
     float: left;
     margin-right: 8px;
