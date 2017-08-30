@@ -19,33 +19,34 @@ export class Agreement extends Component {
 
     saveSelection () {
         const selection = window.getSelection();
-        const  range = selection.getRangeAt(0);
+        const range = selection.getRangeAt(0);
+        const position = selection.getRangeAt(0).getBoundingClientRect();
 
         if (range.startOffset !== range.endOffset) {
-            const range = selection.getRangeAt(0).cloneRange();
             this.props.dispatch(saveSelection(range));
-            this.setState({ range });
+            this.props.dispatch(savePosition(position));
+        } else {
+            this.props.dispatch(hideTooltip());
         }
     }
 
-    handleMouseDown (event) {
-        const position = { x: event.pageX, y: event.pageY };
+    handleMouseDown () {
+        const selection = window.getSelection();
         this.props.dispatch(copyToClipboard(false));
 
-        setTimeout(() => {
-            const selection = window.getSelection();
-            selection.anchorOffset === selection.focusOffset
-                ? this.props.dispatch(hideTooltip())
-                : this.props.dispatch(savePosition(position));
-        }, 200)
+        if (selection.anchorOffset === selection.focusOffset) {
+            this.props.dispatch(hideTooltip());
+        }
     }
 
     render () {
         return (
             <div>
-                <section className="agreement"
-                         onMouseDown={this.handleMouseDown}
-                         onMouseUp={this.saveSelection}>
+                <section
+                    className="agreement"
+                    onMouseDown={this.handleMouseDown}
+                    onMouseUp={this.saveSelection}>
+
                     <h1 className='headline'>Offer terms</h1>
                     <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque.
                         Aliquam sit amet ultrices nibh, ut volutpat ipsum. Ut pulvinar varius bibendum. Mauris euismod,
@@ -80,9 +81,7 @@ export class Agreement extends Component {
     }
 }
 
-Agreement.propTypes = {
-    dispatch: PropTypes.func
-};
+Agreement.propTypes = { dispatch: PropTypes.func };
 
 const mapStateToProps = (state) => ({
     selection: state.agreement.selection,

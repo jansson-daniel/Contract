@@ -36,7 +36,7 @@ export class Comment extends Component {
     handlePost (event) {
         event.preventDefault();
 
-        if (this.state.value.length === 0 || this.state.value === 'Write commente') return;
+        if (this.state.value.length === 0) return;
 
         const comment = {
             message: this.state.value,

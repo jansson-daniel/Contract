@@ -11,8 +11,7 @@ export default handleActions({
     SAVE_POSITION: (state, action) => {
         return {
             ...state,
-            position: action.payload,
-            showTooltip: false
+            position: action.payload
         }
     },
     COPY_TO_CLIPBOARD: (state, action) => {

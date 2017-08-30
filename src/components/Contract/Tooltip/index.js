@@ -16,9 +16,10 @@ export class Tooltip extends Component {
     }
 
     componentWillReceiveProps (nextProps) {
+        const arrowHeight = 15;
         this.setState({ selection: nextProps.selection });
-        this.tooltip.style.left = nextProps.position.x -130 + 'px';
-        this.tooltip.style.top = nextProps.position.y -100 + 'px';
+        this.tooltip.style.left = nextProps.position.left + (nextProps.position.width / 2 - 122) + 'px';
+        this.tooltip.style.top = window.scrollY + nextProps.position.top - (this.tooltip.offsetHeight + arrowHeight) + 'px';
     }
 
     makeSelection () {
