@@ -11,33 +11,31 @@
 }
 
 .comment .text-area {
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    box-shadow: inset 0 0 1px 1px #eeeeee;
     width: 100%;
     height: 180px;
     padding: 51px 17px 10px 12px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    box-shadow: inset 0 0 1px 1px #eeeeee;
     box-sizing: border-box;
     font-size: 16px;
-    font-family: 'Helvetica', 'Arial', 'sans-serif';
     outline: none;
     color: #666666;
     resize: none;
 }
 
 .comment .textarea-header {
+    position: absolute;
     height: 42px;
     width: 100%;
-    background-color: #eee;
-    padding: 12px;
-    position: absolute;
     left: 0;
     top: 0;
+    padding: 12px;
+    background-color: #eee;
     box-sizing: border-box;
 }
 
 .comment .sub-heading {
-    font-family: 'Arial', 'Helvetica', 'sans-serif';
     font-size: 1.5em;
     font-weight: 100;
 }
@@ -45,19 +43,18 @@
 .comment .send-to {
     margin-right: 5px;
     font-size: 16px;
-    font-family: 'Helvetica', 'Arial', 'sans-serif';
     color: #444444;
 }
 
 .comment .post-button {
-    background: #5a87c8;
-    border: none;
-    border-radius: 3px;
-    color: #ffffff;
-    font-size: 14px;
-    padding: 7px 15px 10px 15px;
     float: right;
     margin-top: 10px;
+    padding: 7px 15px 10px 15px;
+    border: none;
+    border-radius: 3px;
+    background-color: #5a87c8;
+    color: #ffffff;
+    font-size: 14px;
     cursor: pointer;
     outline: none;
 }
