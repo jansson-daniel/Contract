@@ -40,8 +40,10 @@ export class Corporation extends Component {
                         <span className="add-participant">Add participant in another company</span>
                     </div>
                     <button className="sign-button">
-                        <img src="images/checkmark.png" />
-                        <span>Sign contract</span>
+                        <div className="sign-button-wrapper">
+                            <img src="images/checkmark.png" />
+                            <span>Sign contract</span>
+                        </div>
                     </button>
                     <div className="action-wrapper">
                         <i className="fa fa-share add-icon" />

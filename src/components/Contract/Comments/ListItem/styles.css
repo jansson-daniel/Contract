@@ -1,9 +1,9 @@
 .comment .list-item {
-    font-size: 16px;
     font-family: 'Helvetica', 'Arial', 'sans-serif';
     color: #444444;
     padding: 15px;
-    cursor: pointer
+    cursor: pointer;
+    font-size: 15px;
 }
 
 .comment .list-item .sender-receiver {
@@ -16,6 +16,10 @@
     margin-right: 5px;
     background-color: #eeeeee;
     padding: 3px;
+}
+
+.comment .list-item .message {
+    margin-bottom: 5px;
 }
 
 .comment .list-item .subject {

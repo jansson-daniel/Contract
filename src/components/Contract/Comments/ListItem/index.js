@@ -30,7 +30,10 @@ export class ListItem extends Component {
                     <span className="receiver">Testing Ninja</span>
                     <span className="timestamp">27 minutes ago</span>
                 </p>
-                <p><span className="subject">Subject:</span> Contract</p>
+                <p className="message">
+                    <span className="subject">Subject: </span>
+                    Contract
+                </p>
                 {this.props.comment.message}
             </li>
         )
