@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
+import ContenEditable from 'react-wysiwyg';
 import {savePosition, saveSelection} from '../../../actions/agreement';
 import {copyToClipboard, hideTooltip} from '../../../actions/tooltip';
 import Tooltip from '../Tooltip';
@@ -43,6 +44,7 @@ export class Agreement extends Component {
         return (
             <div>
                 <section
+                    contentEditable="true"
                     className="agreement"
                     onMouseDown={this.handleMouseDown}
                     onMouseUp={this.saveSelection}
