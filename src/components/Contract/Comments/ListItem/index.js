@@ -36,8 +36,8 @@ export class ListItem extends Component {
     render () {
         return (
             <li onClick={this.handleClick} className="list-item">
-                <p className="sender-receiver">From
-                    <span className="sender">Peramanathan Sathyamoorthly</span> To
+                <p className="sender-receiver">From:
+                    <span className="sender">Peramanathan Sathyamoorthly</span> To:
                     <span className="receiver">Testing Ninja</span>
                     <span className="timestamp">{this.state.timeLaps} minutes ago</span>
                 </p>
