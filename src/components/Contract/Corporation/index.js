@@ -11,7 +11,7 @@ export class Corporation extends Component {
 
     render () {
         return (
-            <aside className='corporation'>
+            <div className='corporation'>
                 <img className="logotype" src="images/oneflow.png" />
                 <div className="customer-info">
                     <span className="name">Oneflow AB</span>
@@ -67,7 +67,7 @@ export class Corporation extends Component {
                         <span className="add-tag">Add Tag</span>
                     </div>
                 </div>
-            </aside>
+            </div>
         )
     }
 }

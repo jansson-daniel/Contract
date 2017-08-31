@@ -14,14 +14,14 @@ export class Contract extends Component {
 
     render () {
         return (
-            <div>
-                <div className='contract'>
+            <div className="wrapper">
+                <section className='contract'>
                     <Agreement />
                     <Comments />
-                </div>
-                <div className="company">
+                </section>
+                <aside className="company">
                     <Corporation />
-                </div>
+                </aside>
             </div>
         )
     }

@@ -8,6 +8,7 @@
 
 .comment .form {
     position: relative;
+    overflow: hidden;
 }
 
 .comment .text-area {
