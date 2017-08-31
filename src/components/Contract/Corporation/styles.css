@@ -48,11 +48,13 @@
 .corporation .action-wrapper {
     margin-bottom: 25px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .corporation .tag-wrapper {
     margin-bottom: 10px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .corporation .add-icon {
@@ -71,6 +73,7 @@
     margin-top: -1px;
     font-size: 0.9em;
     color: #5a87c8;
+    cursor: pointer;
 }
 
 .corporation .customer-info {
@@ -94,6 +97,8 @@
     font-size: 1em;
     text-align: center;
     color: #ffffff;
+    cursor: pointer;
+    outline: none;
 }
 
 .corporation .sign-button img {
@@ -120,6 +125,7 @@
 .corporation .download {
     color: #5a87c8;
     font-size: .9em;
+    cursor: pointer;
 }
 
 .corporation .tag {
@@ -135,6 +141,7 @@
     background-color: #888888;
     color: #ffffff;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .corporation .imported-wrapper span {
@@ -154,6 +161,7 @@
     float: left;
     font-size: 0.9em;
     color: #08A7C8;
+    cursor: pointer;
 }
 
 .corporation .add-tag-icon {
